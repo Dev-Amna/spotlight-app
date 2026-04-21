@@ -10,7 +10,8 @@ const { width, height } = Dimensions.get("window");
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: COLORS.background
+        backgroundColor: COLORS.background,
+        alignItems: "center"
 
     },
     brandSection: {
@@ -49,7 +50,8 @@ export const styles = StyleSheet.create({
     illustration: {
         width: width * 0.75,
         height: width * 0.75,
-        maxHeight: 280
+        maxHeight: 280,
+
     },
     loginSection: {
         width: "100%",
@@ -82,7 +84,8 @@ export const styles = StyleSheet.create({
         height: 24,
         justifyContent: "center",
         alignItems: "center",
-        marginRight: 12
+        marginRight: 12,
+
     },
     googleButtonText: {
         fontSize: 16,
