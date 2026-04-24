@@ -1,8 +1,8 @@
-// styles / auth.stlye.ts
 
-import { COLORS } from "../constants/theme";
 
+import { COLORS } from "@/constants/theme";
 import { Dimensions, StyleSheet } from "react-native";
+
 
 
 const { width, height } = Dimensions.get("window");
@@ -70,7 +70,7 @@ export const styles = StyleSheet.create({
         marginBottom: 20,
         width: "100%",
         maxWidth: 300,
-        shadowColor: "#000",
+        boxShadow: "0px 2px 10px rgba(0,0,0,0.25)",
         shadowOffset: {
             width: 0,
             height: 4

@@ -1,8 +1,8 @@
 
-import React from 'react'
-import { Tabs } from 'expo-router'
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { COLORS } from '../constants/theme';
+import { Tabs } from 'expo-router';
+import React from 'react';
+import { COLORS } from '../../constants/theme';
 const TabsLayout = () => {
     return (
         <Tabs screenOptions={{
