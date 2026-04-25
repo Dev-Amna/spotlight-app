@@ -1,25 +1,29 @@
 
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
-import { ClerkProvider } from '@clerk/clerk-expo'
-import { tokenCache } from "@/cache";
+import { StatusBar } from "expo-status-bar";
+
 import Initiallayout from "@/components/Initiallayout";
+import { usePathname } from "expo-router";
+import { useEffect } from "react";
+import ClerkAndConvexProvider from "@/providers/ClerkAndConvexProvider";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-
-const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!
-
-if (!publishableKey) {
-  throw new Error('Add your Clerk Publishable Key to the .env file')
-}
 
 export default function RootLayout() {
-  return <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
-    <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
-      
-        <Initiallayout />
-      </SafeAreaView></SafeAreaProvider>
+  const pathname = usePathname();
 
-  </ClerkProvider>
+  useEffect(() => {
+    console.log("User in : ", pathname);
+
+  }, [pathname])
+
+  return(
+   <ClerkAndConvexProvider>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "black" }}>
+      <StatusBar style={"light"} />
+      <Initiallayout />
+    </SafeAreaView>
+  </ClerkAndConvexProvider>
+  )
 }
 
 

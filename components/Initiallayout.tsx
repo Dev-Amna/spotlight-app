@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { SignedIn, useAuth, useSessionList } from "@clerk/clerk-expo"
-import { router, Stack, useRouter, useSegments } from "expo-router";
+import {  useAuth } from "@clerk/clerk-expo"
+import {  Stack, useRouter, useSegments } from "expo-router";
 
 const Initiallayout = () => {
     const { isLoaded, isSignedIn } = useAuth();
@@ -14,6 +14,7 @@ const Initiallayout = () => {
         if (!isSignedIn && !inAuthScreen) router.replace("/(auth)/login");
         else if (isSignedIn && inAuthScreen) router.replace("/(tabs)");
     }, [isLoaded, isSignedIn, segments])
+
 
     if (!isLoaded) return null;
 
