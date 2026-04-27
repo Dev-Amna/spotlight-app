@@ -1,3 +1,5 @@
+// // This provider connects Clerk (auth) with Convex (backend)
+// and wraps the app so authenticated users can access backend data securely
 import { tokenCache } from "@/cache"
 import { ClerkLoaded, ClerkProvider, useAuth } from "@clerk/clerk-expo"
 import { ConvexReactClient } from "convex/react"
