@@ -17,9 +17,12 @@ export const createUser = mutation({
 
     handler: async (ctx, args) => {
         const exitingUser = await ctx.db.query("users")
-            .withIndex("by_clerk_id", (q) => q.eq("clerkId", args.clerkId));
+            .withIndex("by_clerk_id", (q) => q.eq("clerkId", args.clerkId))
+            .first();
         if (exitingUser) return;
 
+
+        // Create a User in DB (data base)
         await ctx.db.insert("users", {
             username: args.username,
             fullname: args.fullname,
