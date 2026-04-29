@@ -19,6 +19,8 @@ export default defineSchema({
         imageUrl: v.string(),
         storageId: v.id("_storage"),
         caption: v.optional(v.string()),
+        likes: v.number(),
+        comments: v.number()
     }).index("by_user", ["userId"]),
 
 
