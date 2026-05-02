@@ -20,7 +20,7 @@ export default function ClerkAndConvexProvider({ children }: { children: React.R
     <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ConvexProviderWithClerk useAuth={useAuth} client={convex}>
         <ClerkLoaded>
-          {children      }
+          {children}
         </ClerkLoaded>
       </ConvexProviderWithClerk>
     </ClerkProvider>

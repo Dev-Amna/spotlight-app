@@ -28,7 +28,7 @@ export const createPost = mutation({
         if (!imageUrl) throw new Error("Image Not found");
 
 
-        // Create a User in DB (data base)
+        // Create a Post in DB (data base)
         const postId = await ctx.db.insert("posts", {
             userId: currentUser._id,
             imageUrl,

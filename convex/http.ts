@@ -3,7 +3,7 @@ import { Webhook } from "svix";
 import { api } from "./_generated/api";
 import { httpAction } from "./_generated/server";
 
- const http = httpRouter();
+const http = httpRouter();
 
 
 http.route({
@@ -30,8 +30,10 @@ http.route({
 
 
         const payload = await request.json();
-        const body = JSON.stringify(payload);
+        console.log("Payload" ,payload);
 
+        const body = JSON.stringify(payload);
+        console.log("Body",body);
 
         const wh = new Webhook(webHookSecret);
 
