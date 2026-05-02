@@ -22,9 +22,10 @@ export const styles = StyleSheet.create({
     borderBottomColor: COLORS.surface,
   },
   headerTitle: {
-    fontSize: 18,
+    fontSize: 19,
     fontWeight: "600",
     color: COLORS.white,
+
   },
   contentDisabled: {
     opacity: 0.7,
